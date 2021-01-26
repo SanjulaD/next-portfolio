@@ -1,0 +1,16 @@
+{
+  "name": "next-portfolio",
+  "version": "1.0.0",
+  "description": "First Nextjs Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "author": "sanjula de alwis",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^10.0.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
