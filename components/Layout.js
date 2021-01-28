@@ -4,7 +4,6 @@ import Router from "next/router";
 import Nprogress from "nprogress";
 
 Router.onRouteChangeStart = url => {
-    console.log(url);
     Nprogress.start();
 }
 
@@ -15,7 +14,6 @@ const Layout = ({ children, title }) => (
     <div className="root">
         <Head>
             <title>Next Portfolio</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css" />
         </Head>
         <header>
             <Link href="/"><a>Home</a></Link>
