@@ -1,7 +1,22 @@
-import Link from "next/link"
+import Link from "next/link";
+import Head from "next/head";
+import Router from "next/router";
+import Nprogress from "nprogress";
 
-export default ({ children, title }) => (
+Router.onRouteChangeStart = url => {
+    console.log(url);
+    Nprogress.start();
+}
+
+Router.onRouteChangeComplete = () => Nprogress.done();
+Router.onRouteChangeError = () => Nprogress.done();
+
+const Layout = ({ children, title }) => (
     <div className="root">
+        <Head>
+            <title>Next Portfolio</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css" />
+        </Head>
         <header>
             <Link href="/"><a>Home</a></Link>
             <Link href="/about"><a>About</a></Link>
@@ -9,7 +24,7 @@ export default ({ children, title }) => (
         </header>
         <h1>{title}</h1>
         {children}
-        
+
         <footer>
             &copy; {new Date().getFullYear()}
         </footer>
@@ -54,3 +69,5 @@ export default ({ children, title }) => (
         </style>
     </div>
 );
+
+export default Layout
